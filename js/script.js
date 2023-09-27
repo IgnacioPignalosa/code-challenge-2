@@ -18,7 +18,17 @@ fetch('https://jsonplaceholder.typicode.com/users', {
   })
 })
 .then(response => response.json())
-.then(data => console.log(data))
+.then(data => {        
+  Swal.fire({
+      title: 'Envío Realizado',
+      html:( `<p>Nombre: ${data.nombre}</p> 
+              <p>Apellido: ${data.apellido}</p> 
+              <p>Fecha de Nacimiento: ${data.fechaNacimiento}</p>`),
+      confirmButtonColor: "#2b915e",
+  });
+  console.log(data);
+
+});
 
 });
 
